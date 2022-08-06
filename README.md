@@ -60,7 +60,8 @@ int main()
         printf("NO");
     return 0;
 }
-#python
+
+# python
 cities = int(input())
 total= int(input())
 parent={i:i for i in range(1,cities+1)}
