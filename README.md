@@ -9,16 +9,13 @@ int findParent(int x)
 {
     if (parents[x] == x)
         return x;
-
     parents[x] = findParent(parents[x]);
     return parents[x];
 }
-
 void unionSets(int x, int y)
 {
     int parentX = findParent(x);
     int parentY = findParent(y);
-
     if (parentX < parentY)
         parents[parentX] = parentY;
     else
@@ -27,7 +24,6 @@ void unionSets(int x, int y)
 int main()
 {
     int i, j;
-
     int N;
     scanf("%d", &N); //도시의  수  
     // parents 초기화
@@ -39,10 +35,8 @@ int main()
     int input;
     for (i = 0; i < N; i++)
     {
-        for (j = 0; j < N; j++)
-        {
+        for (j = 0; j < N; j++){
             scanf("%d", &input); //여행하는 도시들끼리의 연결여부 (2차원배열) 
-
             if (input == 1)
                 unionSets(i, j);
         }
@@ -53,7 +47,6 @@ int main()
     for (i = 1; i < M; i++)
     {
         scanf("%d", &input);
-
         if (findParent(input - 1) != prevParent)
         {
             isPossible = -1;
@@ -65,7 +58,6 @@ int main()
         printf("YES");
     else
         printf("NO");
-
     return 0;
 }
 #python
